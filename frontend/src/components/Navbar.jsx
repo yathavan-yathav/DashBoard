@@ -1,4 +1,4 @@
-import { useAppContext } from "../context/AppContext";
+import { useAppContext } from "../../../frontend/src/context/AppContext";
 
 export default function Navbar() {
   const { navbar } = useAppContext();

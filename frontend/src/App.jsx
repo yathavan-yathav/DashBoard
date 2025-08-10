@@ -1,16 +1,19 @@
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Dashboard from "./components/Dashboard";
-import { AppProvider } from "./context/AppContext";
+import { AppProvider } from './context/AppContext'
+import Header from './components/Header'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Dashboard from './components/Dashboard';
+function App() {
+ 
 
-export default function App() {
   return (
     <AppProvider>
-      <header />
-      <Navbar/>
+      <Header />
+       <Navbar />
       <Dashboard />
-      <footer />
-    </AppProvider>
-  );
+      <Footer />
+      </AppProvider>
+  );    
 }
+
+export default App
