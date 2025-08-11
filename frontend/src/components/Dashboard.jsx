@@ -24,7 +24,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="p-4 bg-gray-100">
+    <div className="p-4 bg-gray-100 ml-48 mt-16 min-h-[calc(100vh-64px)] overflow-auto">
       {/* Header Edit */}
       <h2 className="text-xl font-bold mb-2">Header</h2>
       <input
@@ -66,24 +66,33 @@ export default function Dashboard() {
 
       {/* Footer Edit */}
       <h2 className="text-xl font-bold mt-4 mb-2">Footer</h2>
-      <input
-        type="text"
-        value={footer.email}
-        onChange={(e) => setFooter({ ...footer, email: e.target.value })}
-        className="border p-2 mb-2 block w-full"
-      />
-      <input
-        type="text"
-        value={footer.phone}
-        onChange={(e) => setFooter({ ...footer, phone: e.target.value })}
-        className="border p-2 mb-2 block w-full"
-      />
-      <input
-        type="text"
-        value={footer.address}
-        onChange={(e) => setFooter({ ...footer, address: e.target.value })}
-        className="border p-2 mb-2 block w-full"
-      />
+      <div className="flex items-center space-x-2 mb-2">
+        <label className="whitespace-nowrap font-semibold">Phone:</label>
+        <input
+          type="text"
+          value={footer.email}
+          onChange={(e) => setFooter({ ...footer, email: e.target.value })}
+          className="border p-2 mb-2 block w-full"
+        />
+      </div>
+      <div className="flex items-center space-x-2 mb-2">
+        <label className="whitespace-nowrap font-semibold">Phone:</label>
+        <input
+          type="text"
+          value={footer.phone}
+          onChange={(e) => setFooter({ ...footer, phone: e.target.value })}
+          className="border p-2 mb-2 block w-full"
+        />
+      </div>
+      <div className="flex items-center space-x-2 mb-2">
+        <label className="whitespace-nowrap font-semibold">Address:</label>
+        <input
+          type="text"
+          value={footer.address}
+          onChange={(e) => setFooter({ ...footer, address: e.target.value })}
+          className="border p-2 mb-2 block w-full"
+        />
+      </div>
     </div>
   );
 }
