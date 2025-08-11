@@ -3,7 +3,7 @@ import { useAppContext } from "../../../frontend/src/context/AppContext";
 export default function Navbar() {
   const { navbar } = useAppContext();
   return (
-    <nav className="fixed top-[64px] left-0 h-[calc(100vh-64px)] w-[20%] bg-gray-800 text-white flex flex-col items-start p-4 space-y-4">
+    <nav className="relative top-0 left-0 h-6 w-full bg-gray-800 text-white flex flex-row items-start p-4 space-y-4 z-40">
       {navbar.map((link, idx) => (
         <a 
         key={idx} 

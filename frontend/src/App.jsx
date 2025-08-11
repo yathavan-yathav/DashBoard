@@ -9,7 +9,7 @@ function App() {
   return (
     <AppProvider>
       <Header />
-       <Navbar />
+      <Navbar />
       <Dashboard />
       <Footer />
       </AppProvider>

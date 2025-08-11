@@ -24,24 +24,36 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="p-4 bg-gray-100 ml-48 mt-16 min-h-[calc(100vh-64px)] overflow-auto">
+    <div className="p-4 bg-gray-200 mx-16 overflow-auto">
       {/* Header Edit */}
-      <h2 className="text-xl font-bold mb-2">Header</h2>
-      <input
-        type="text"
-        value={header.title}
-        onChange={(e) => setHeader({ ...header, title: e.target.value })}
-        className="border p-2 mb-2 block w-full"
-        placeholder="Title"
-      />
-      <input type="file" onChange={handleImageUpload} className="mb-2" />
-      {preview && <img src={preview} alt="Preview" className="w-32 h-32 object-cover" />}
+      <br />
+      <h1 className="text-center text-xl font-extrabold mb-4">Header</h1>
+      <br />
+      <div className="flex items-center ml-2.5 space-x-2">
+        <label className="whitespace-nowrap font-semibold ml-1">Title:</label>
+        <input
+          type="text"
+          value={header.title}
+          onChange={(e) => setHeader({ ...header, title: e.target.value })}
+          className="border p-2 mb-2 block w-full ml-1"
+
+        />
+      </div>
+
+      <div>
+        <label className="whitespace-nowrap font-semibold">Image:</label>
+        <input type="file" onChange={handleImageUpload} className="mb-2" />
+        {preview && <img src={preview} alt="Preview" className="w-32 h-32 object-cover" />}
+      </div>
+      <br />
 
       {/* Navbar Edit */}
-      <h2 className="text-xl font-bold mt-4 mb-2">Navbar</h2>
+      <h2 className=" text-center text-2xl font-bold mt-4 mb-2">Navbar</h2>
+      <br />
       {navbar.map((link, idx) => (
-        <div key={idx} className="flex space-x-2 mb-2">
+        <div key={idx} className="flex space-x-2 mb-2 p-2 rounded">
           <input
+            className="border p-2 flex-1 bg-gray-300"
             type="text"
             value={link.label}
             onChange={(e) => {
@@ -49,9 +61,10 @@ export default function Dashboard() {
               updated[idx].label = e.target.value;
               setNavbar(updated);
             }}
-            className="border p-2 flex-1"
+
           />
           <input
+            className="border-2 p-2 flex-1 bg-gray-400 hover:bg-gray-600"
             type="text"
             value={link.url}
             onChange={(e) => {
@@ -59,15 +72,16 @@ export default function Dashboard() {
               updated[idx].url = e.target.value;
               setNavbar(updated);
             }}
-            className="border p-2 flex-1"
+
           />
         </div>
       ))}
-
+      <br />
       {/* Footer Edit */}
-      <h2 className="text-xl font-bold mt-4 mb-2">Footer</h2>
+      <h2 className="text-center text-2xl font-bold mt-4 mb-2">Footer</h2>
+      <br />
       <div className="flex items-center space-x-2 mb-2">
-        <label className="whitespace-nowrap font-semibold">Phone:</label>
+        <label className="whitespace-nowrap font-semibold">Email:</label>
         <input
           type="text"
           value={footer.email}
